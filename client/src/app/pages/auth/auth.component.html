@@ -1,0 +1,13 @@
+<div class="P-container">
+  <div class="P-auth-form-container">
+    <div  class="button_div">
+      <button class="btn" (click)="change()">{{!isLogin ? 'Registration' : 'Login' }}</button>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <h1>{{isLogin ? 'Registration' : 'Login' }}</h1>
+      <input type="text" placeholder="Name" formControlName="name">
+      <input type="password" placeholder="Password" formControlName="password">
+      <button type="submit" [disabled]="form.invalid">{{isLogin ? 'Register' : 'Login' }}</button>
+    </form>
+  </div>
+</div>

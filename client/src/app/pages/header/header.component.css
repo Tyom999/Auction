@@ -1,0 +1,11 @@
+.P-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  font-weight: bold;
+}

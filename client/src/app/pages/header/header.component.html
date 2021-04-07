@@ -1,0 +1,10 @@
+<div class="P-container">
+  <button *ngIf="router.url.includes('participate')" [routerLink]="['', 'auctions']">
+    Auctions
+  </button>
+
+
+  <button (click)="logOut()">
+    LogOut
+  </button>
+</div>

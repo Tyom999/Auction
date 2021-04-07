@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div class="P-container" >
+
+  <h1 [hidden]="!started">Auction started</h1>
+  <h1 [hidden]="!closed">Auction closed</h1>
+
+  <div class="P-option">
+    <h4 *ngFor="let auctionParticipant of socketIoService.auctionParticipants">{{userId === auctionParticipant.id? 'You' : auctionParticipant.id}}</h4>
+  </div>
+
+  <div class="P-option" *ngIf="product">
+      <table >
+        <tr>
+          <th>Mark</th>
+          <th>Model</th>
+          <th>Description</th>
+          <th>Days</th>
+          <th>Hours</th>
+          <th>Minutes</th>
+          <th>Seconds</th>
+          <th>Start BidInterface</th>
+        </tr>
+        <tr >
+          <td>{{product.mark}}</td>
+          <td>{{product.model}}</td>
+          <td>{{product.description}}</td>
+          <td>{{days}}d</td>
+          <td>{{hours}}h</td>
+          <td>{{minutes}}m</td>
+          <td>{{seconds}}s</td>
+          <td>{{product.startBid}}  $</td>
+        </tr>
+      </table>
+
+  </div>
+
+  <div class="P-option">
+    <input type="text" [min]="product?.startBid"  [(ngModel)]="cost" >
+    <button  (click)="submit()">Bid</button>
+  </div>
+
+</div>

@@ -1,0 +1,14 @@
+<app-admin-header></app-admin-header>
+<div class="P-container">
+  <div class="P-add-auction">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <h1>Add Auction</h1>
+      <input type="text" placeholder="Mark" formControlName="mark">
+      <input type="text" placeholder="Model" formControlName="model">
+      <input type="text" placeholder="Description" formControlName="description">
+      <input type="datetime-local"  formControlName="date">
+      <input type="number" formControlName="startBid">
+      <button type="submit" [disabled]="form.invalid">Add</button>
+    </form>
+  </div>
+</div>

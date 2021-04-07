@@ -1,0 +1,19 @@
+.P-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.P-option {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+input {
+  width: 200px;
+  height: 40px;
+}

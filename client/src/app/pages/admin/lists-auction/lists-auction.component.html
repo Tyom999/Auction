@@ -1,0 +1,28 @@
+<app-admin-header></app-admin-header>
+<div >
+  <div>
+    <table *ngIf="products.length; else empty">
+      <tr>
+        <th>Mark</th>
+        <th>Model</th>
+        <th>Description</th>
+        <th>Date and Time</th>
+        <th>Start BidInterface</th>
+        <th>Detail</th>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td >{{product.mark}}</td>
+        <td>{{product.model}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.date | date:'MM/dd/yyyy-hh:mm:ss'}}</td>
+        <td>{{product.startBid}}  $</td>
+        <td><button [routerLink]="['','detail-auction', product._id]">Detail</button></td>
+      </tr>
+
+    </table>
+
+    <ng-template #empty>
+      <h1>There is not auction</h1>
+    </ng-template>
+  </div>
+</div>
